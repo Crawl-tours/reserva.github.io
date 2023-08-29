@@ -74,22 +74,20 @@
         <img src="parrilla.png" alt="Imagen Expandida">
     </div>
 
-   <script>
-    const storyBubbles = document.querySelectorAll(".story-bubble");
-    const expandedStory = document.querySelector(".expanded-story");
-    const expandedImg = expandedStory.querySelector("img");
-    const defaultImage = "parrilla.png"; // Imagen predeterminada
+    <script>
+        const storyBubbles = document.querySelectorAll(".story-bubble");
+        const expandedStory = document.querySelector(".expanded-story");
+        const expandedImg = expandedStory.querySelector("img");
 
-    storyBubbles.forEach((bubble) => {
-        bubble.addEventListener("click", () => {
-            expandedImg.src = bubble.dataset.image || defaultImage; // Usa la imagen de la burbuja o la predeterminada
-            expandedStory.style.display = "flex";
-            setTimeout(() => {
-                expandedStory.style.display = "none";
-            }, 5000);
+        storyBubbles.forEach((bubble) => {
+            bubble.addEventListener("click", () => {
+                expandedImg.src = bubble.dataset.image;
+                expandedStory.style.display = "flex";
+                setTimeout(() => {
+                    expandedStory.style.display = "none";
+                }, 5000);
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
