@@ -186,13 +186,11 @@
             padding: 40px 0;
         }
 
-        .review-container {
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: scrollReviews 10s linear infinite;
+       .reviews-section {
+            text-align: center;
+            padding: 40px 0;
         }
-
+       /* Estilos para las cajas de reseñas */
         .review {
             width: 300px;
             padding: 20px;
@@ -202,8 +200,10 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: inline-block;
             vertical-align: top;
+            white-space: normal; /* Para que el contenido no se desborde */
         }
 
+        /* Animación de desplazamiento de reseñas */
         @keyframes scrollReviews {
             0% {
                 transform: translateX(0);
