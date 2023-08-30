@@ -157,45 +157,13 @@
             display: inline-block;
         }
 
-        .upsell-container::before {
-                    content: '';
-                    flex: 0 0 auto;
-                    width: 26px;
-                    height: 25px;
-                    background-image: url(arrow.png);
-                    background-repeat: no-repeat;
-                    background-position: 0 center;
-                    background-size: contain;
-                    position: relative;
-                    left: -15px;
-                    top: 0;
-                    animation-direction: alternate;
-                    animation-duration: 0.5s;
-                    animation-name: move;
-                    animation-iteration-count: infinite;
-                    animation-timing-function: linear;
-                }
-        }
 
-        .upsell .upsell-icon {
-            position: absolute;
-            left: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 26px;
-            height: 25px;
-            background-image: url(arrow.png);
-            background-repeat: no-repeat;
-            background-position: 0 center;
-            background-size: contain;
+        .upsell img {
             animation-direction: alternate;
             animation-duration: 0.5s;
             animation-name: move;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            z-index: 3;
-            display: block;
-            margin: -14px;
         }
 
         .upsell span {
@@ -317,7 +285,7 @@
             <div class="upsell-container">
                  <div class="upsell-icon"></div>
                 <div class="upsell">
-                    <input type="checkbox"><span>Sí, quiero usar la mochila de protección del guía</span>
+                    <img  src="arrow.png" width="25"><input type="checkbox"><span>Sí, quiero usar la mochila de protección del guía</span>
                     <p>Se trate de una mochila que llevará el guía donde podrás guardar tus pertenencias y el guía se hará cargo y te recordará que lo tienes, además tus cosas quedan seguras 24h - 72h siguientes en nuestras oficinas por sólo 10€ extra</p>
                 </div>
                
