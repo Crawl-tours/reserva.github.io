@@ -130,6 +130,38 @@
           .reserva-option.active {
             border: 3px solid #66CD54;
         }
+
+        .oferta{
+            padding: 18px;
+            border: 1px solid #f8c75a;
+            background: #fbf8e5;
+        }
+
+        .oferta .upsell::before {
+    content: '';
+    flex: 0 0 auto;
+    width: 26px;
+    height: 25px;
+    background-image: url(arrow.png);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: contain;
+    position: relative;
+    left: -15px;
+    top: 0;
+    animation-direction: alternate;
+    animation-duration: 0.5s;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+        }
+
+        .upsell span{
+            font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -190,6 +222,11 @@
             <h3>Para grupos medianos</h3>
             <img src="icono_grupo_mediano.png" alt="Icono Grupo Mediano">
         </div>
+        </div>
+    </div>
+    <div class="oferta">
+        <div class="upsell">
+            <input type="checkbox"><span>Sí, quiero protección de por vida</span>
         </div>
     </div>
 </div>
