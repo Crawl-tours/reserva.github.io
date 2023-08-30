@@ -118,6 +118,12 @@
             justify-content: center;
         }
 
+        .reserva-options.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Añadir una transición suave de opacidad */
+}
+
         .reserva-option {
             text-align: center;
             width: 50%;
@@ -380,9 +386,8 @@
         });
 
 
-
-        const reservaOptions = document.querySelectorAll(".reserva-option");
 const pagoOptions = document.querySelector(".pago-options");
+const reservaOptionsContainer = document.querySelector(".reserva-options");
 
 reservaOptions.forEach((option) => {
     option.addEventListener("click", () => {
@@ -392,9 +397,14 @@ reservaOptions.forEach((option) => {
         option.classList.add("active");
         activeOption = option;
 
-        // Cambiar los estilos de los divs al hacer clic en la opción de reserva
-        document.querySelector(".reserva-options").style.display = "none";
+        // Agregar la clase 'hidden' a .reserva-options y mostrar .pago-options
+        reservaOptionsContainer.classList.add("hidden");
         pagoOptions.style.display = "flex";
+
+        // Luego, quitar la clase 'hidden' después de un breve retraso para que la transición de opacidad ocurra
+        setTimeout(() => {
+            reservaOptionsContainer.classList.remove("hidden");
+        }, 100); // Ajusta el retraso si es necesario
     });
 });
     </script>
