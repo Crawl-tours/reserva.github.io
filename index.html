@@ -93,13 +93,24 @@
 
         .reserva-options {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 20px;
         }
 
         .reserva-option {
             text-align: center;
-            width: 23%;
+            width: calc(50% - 20px);
+            padding: 20px;
+            background-color: #444;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .reserva-option:hover {
+            background-color: #00ff00; /* Cambia este color al verde fosforescente deseado */
         }
 
         .reserva-option h3 {
