@@ -208,11 +208,20 @@
         }
 
         .review-container {
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: scrollReviews 10s linear infinite;
+               display: flex;
+    width: max-content;
+    animation: moverEjemplos 100s linear infinite;
         }
+
+ @keyframes moverEjemplos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
         .review {
             width: 300px;
