@@ -99,12 +99,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 20px;
         }
 
         .reserva-option {
             text-align: center;
-            width: calc(50% - 20px);
+            width: 50%;
             padding: 20px;
             background-color: #444;
             border: 1px solid black;
@@ -113,9 +112,7 @@
             transition: background-color 0.3s;
         }
 
-        .reserva-option:hover {
-            background-color: #00ff00; /* Cambia este color al verde fosforescente deseado */
-        }
+       
 
         .reserva-option h3 {
             font-size: 20px;
@@ -166,6 +163,7 @@
 <div class="reserva-section">
     <h1>Reserva Ahora</h1>
     <div class="reserva-options">
+       <div class="reserva1">
         <div class="reserva-option">
             <h3>Para grupos pequeños</h3>
             <img src="icono_grupo_pequeno.png" alt="Icono Grupo Pequeño">
@@ -174,13 +172,16 @@
             <h3>Para grupos medianos</h3>
             <img src="icono_grupo_mediano.png" alt="Icono Grupo Mediano">
         </div>
+        </div>
+       <div class="reserva1">
         <div class="reserva-option">
-            <h3>Para grupos grandes</h3>
-            <img src="icono_grupo_grande.png" alt="Icono Grupo Grande">
+            <h3>Para grupos pequeños</h3>
+            <img src="icono_grupo_pequeno.png" alt="Icono Grupo Pequeño">
         </div>
         <div class="reserva-option">
-            <h3>Eventos personalizados</h3>
-            <img src="icono_evento_personalizado.png" alt="Icono Evento Personalizado">
+            <h3>Para grupos medianos</h3>
+            <img src="icono_grupo_mediano.png" alt="Icono Grupo Mediano">
+        </div>
         </div>
     </div>
 </div>
