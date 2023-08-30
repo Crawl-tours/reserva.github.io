@@ -186,11 +186,13 @@
             padding: 40px 0;
         }
 
-       .reviews-section {
-            text-align: center;
-            padding: 40px 0;
+        .review-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: scrollReviews 10s linear infinite;
         }
-       /* Estilos para las cajas de reseñas */
+
         .review {
             width: 300px;
             padding: 20px;
@@ -200,10 +202,8 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: inline-block;
             vertical-align: top;
-            white-space: normal; /* Para que el contenido no se desborde */
         }
 
-        /* Animación de desplazamiento de reseñas */
         @keyframes scrollReviews {
             0% {
                 transform: translateX(0);
@@ -217,15 +217,22 @@
 <body>
     <div class="story-container">
         <div class="story-bubble" data-image="imagen1.jpg">
-            <img src="parrilla.png" alt="Historia 1">
+            <p>La Reserva</p>
+            <img src="lareserva.jpeg">
         </div>
         <div class="story-bubble" data-image="imagen2.jpg">
-            <img src="parrilla.png" alt="Historia 2">
+            <p>La Fiebre</p>
+            <img src="lafiebre.jpg">
         </div>
         <div class="story-bubble" data-image="imagen3.jpg">
-            <img src="parrilla.png" alt="Historia 3">
+            <p>Dcopas</p>
+            <img src="dcopas.jpg">
         </div>
-        <!-- Agrega más burbujas aquí -->
+        <<div class="story-bubble" data-image="imagen3.jpg">
+            <p>Samsara</p>
+            <img src="samsara.jpg">
+        </div>
+            
     </div>
 
     <div class="expanded-story">
@@ -256,21 +263,21 @@
        <div class="reserva1">
         <div class="reserva-option">
             <h3>Para grupos pequeños</h3>
-            <img src="persona1.png" alt="Icono Grupo Pequeño">
+            <img src="icono_grupo_pequeno.png" alt="Icono Grupo Pequeño">
         </div>
         <div class="reserva-option">
             <h3>Para grupos medianos</h3>
-            <img src="persona2.png" alt="Icono Grupo Mediano">
+            <img src="icono_grupo_mediano.png" alt="Icono Grupo Mediano">
         </div>
         </div>
        <div class="reserva1">
         <div class="reserva-option">
             <h3>Para grupos pequeños</h3>
-            <img src="persona3.png" alt="Icono Grupo Pequeño">
+            <img src="icono_grupo_pequeno.png" alt="Icono Grupo Pequeño">
         </div>
         <div class="reserva-option">
             <h3>Para grupos medianos</h3>
-            <img src="persona4.png" alt="Icono Grupo Mediano">
+            <img src="icono_grupo_mediano.png" alt="Icono Grupo Mediano">
         </div>
         </div>
     </div>
