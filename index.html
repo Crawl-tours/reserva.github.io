@@ -163,6 +163,38 @@
     font-weight: 700;
     margin-left: 10px;
         }
+
+        .reviews-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .review-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: scrollReviews 10s linear infinite;
+        }
+
+        .review {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 0 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        @keyframes scrollReviews {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,6 +263,19 @@
         </div>
     </div>
 </div>
+
+     <div class="reviews-section">
+        <h1>Reseñas de Crawls Tours</h1>
+        <div class="review-container">
+            <div class="review">
+                <p>¡Increíble experiencia con Crawls Tours! El guía fue genial y los lugares visitados fueron asombrosos.</p>
+            </div>
+            <div class="review">
+                <p>Recomiendo encarecidamente Crawls Tours. Tuve un tiempo fantástico con un grupo increíble.</p>
+            </div>
+            <!-- Agrega más reseñas ficticias aquí -->
+        </div>
+    </div>
    
 
     <script>
