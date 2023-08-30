@@ -18,8 +18,8 @@
 
         .story-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
         }
 
         .story-bubble {
@@ -32,7 +32,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: moveGradient 3s linear infinite alternate; /* Agregar animación */
+            animation: moveGradient 3s linear infinite alternate;
+            position: relative; /* Para posicionar el texto encima */
+        }
+
+        .story-bubble p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            text-align: center;
+            width: 100%;
         }
 
         @keyframes moveGradient {
@@ -215,7 +228,7 @@
     </style>
 </head>
 <body>
-    <div class="story-container">
+     <div class="story-container">
         <div class="story-bubble" data-image="imagen1.jpg">
             <p>La Reserva</p>
             <img src="lareserva.jpeg">
@@ -228,11 +241,10 @@
             <p>Dcopas</p>
             <img src="dcopas.jpg">
         </div>
-        <<div class="story-bubble" data-image="imagen3.jpg">
+        <div class="story-bubble" data-image="imagen3.jpg">
             <p>Samsara</p>
             <img src="samsara.jpg">
         </div>
-            
     </div>
 
     <div class="expanded-story">
