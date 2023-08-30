@@ -122,6 +122,10 @@
         .reserva-option img {
             width: 60px;
         }
+
+          .reserva-option.active {
+            border: 2px solid green;
+        }
     </style>
 </head>
 <body>
@@ -199,6 +203,20 @@
                 setTimeout(() => {
                     expandedStory.style.display = "none";
                 }, 5000);
+            });
+        });
+
+
+          const reservaOptions = document.querySelectorAll(".reserva-option");
+        let activeOption = null;
+
+        reservaOptions.forEach((option) => {
+            option.addEventListener("click", () => {
+                if (activeOption) {
+                    activeOption.classList.remove("active");
+                }
+                option.classList.add("active");
+                activeOption = option;
             });
         });
     </script>
