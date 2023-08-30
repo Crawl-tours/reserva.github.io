@@ -263,9 +263,9 @@
     </div>
 </div>
 
-<div class="reserva-section" id="reserva">
+<div class="reserva-section">
     <h1>Reserva Ahora</h1>
-    <div class="reserva-options">
+    <div class="reserva-options" id="reserva">
        <div class="reserva1">
         <div class="reserva-option">
             <h3>1 Persona</h3>
@@ -370,7 +370,7 @@
                 }, 5000);
             });
         });
-
+        const pago = document.getElementById('pago');
         const reserva = document.getElementById('reserva');
           const reservaOptions = document.querySelectorAll(".reserva-option");
         let activeOption = null;
@@ -378,16 +378,17 @@
         reservaOptions.forEach((option) => {
             option.addEventListener("click", () => {
                 reserva.style.display = "none";
+                pago.style.display = "block";
             });
         });
 
-const pago = document.getElementById('pago');
+
 const pagoOptions = document.querySelector(".pago-options");
 const reservaOptionsContainer = document.querySelector(".reserva-options");
 
 reservaOptions.forEach((option) => {
     option.addEventListener("click", () => {
-       pago.style.display = "none";
+       
     });
 });
     </script>
