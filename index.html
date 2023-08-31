@@ -290,39 +290,36 @@
     background-color: #4CAF50;
 }
 
-       .notification {
-    position: fixed;
-    bottom: 5px;
-    left: 0;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    animation: slideIn 0.5s forwards, slideOut 0.5s 5s forwards;
-}
+      .notification {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            animation: slideInOut 0.5s forwards;
+            transform: translateX(-100%);
+            display: flex;
+            align-items: center;
+        }
+
         .notification img {
             width: 50px;
             margin-right: 10px;
         }
 
-        @keyframes slideIn {
-            0% {
+        @keyframes slideInOut {
+            0%, 100% {
                 transform: translateX(-100%);
             }
-            100% {
+            20% {
+                transform: translateX(0);
+            }
+            80% {
                 transform: translateX(0);
             }
         }
-
-        @keyframes slideOut {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-      
     </style>
 </head>
 <body>
@@ -544,7 +541,7 @@ pagoOptions.forEach((option) => {
 
 
 
-        const notification = document.querySelector(".notification");
+          const notification = document.querySelector(".notification");
         const clienteSpan = document.getElementById("cliente");
         const numeroTicketsSpan = document.getElementById("numeroTickets");
         
@@ -561,10 +558,13 @@ pagoOptions.forEach((option) => {
             const { cliente, numeroTickets } = notifications[notificationIndex];
             clienteSpan.textContent = cliente;
             numeroTicketsSpan.textContent = numeroTickets;
-            notification.style.left = "350px";
+            notification.style.transform = "translateX(-100%)";
             setTimeout(() => {
-                notification.style.left = "0";
-            }, 5000);
+                notification.style.transform = "translateX(0)";
+            }, 200);
+            setTimeout(() => {
+                notification.style.transform = "translateX(-100%)";
+            }, 4800);
             notificationIndex = (notificationIndex + 1) % notifications.length;
         }
 
