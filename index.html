@@ -442,7 +442,10 @@
             </div>
         </div>
     </div>
-   
+    <div class="notification">
+        <h2><span id="cliente">Ana</span> acaba de comprar <span id="numeroTickets">2</span></h2>
+        <img src="https://cf.ecommercebusinessclub.com/hosted/images/03/3dbafc2e424a4e91c7038740ba33f6/ENTRADAS-ebl.png" style="width: 50px">
+    </div>
 <script src="https://js.stripe.com/v3/"></script>
     <script>
         const storyBubbles = document.querySelectorAll(".story-bubble");
@@ -504,6 +507,35 @@ pagoOptions.forEach((option) => {
       console.log(token);
     }
   });
+
+
+
+        const notification = document.querySelector(".notification");
+        const clienteSpan = document.getElementById("cliente");
+        const numeroTicketsSpan = document.getElementById("numeroTickets");
+        
+        const notifications = [
+            { cliente: "Ana", numeroTickets: "2" },
+            { cliente: "Michel", numeroTickets: "4" },
+            { cliente: "Myriam", numeroTickets: "3" },
+            { cliente: "David", numeroTickets: "2" }
+        ];
+        
+        let notificationIndex = 0;
+
+        function updateNotification() {
+            const { cliente, numeroTickets } = notifications[notificationIndex];
+            clienteSpan.textContent = cliente;
+            numeroTicketsSpan.textContent = numeroTickets;
+            notification.style.left = "-400px";
+            setTimeout(() => {
+                notification.style.left = "10px";
+            }, 2000);
+            notificationIndex = (notificationIndex + 1) % notifications.length;
+        }
+
+        setInterval(updateNotification, 20000);
+    </script>
     </script>
 </body>
 </html>
