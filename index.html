@@ -561,7 +561,7 @@ pagoOptions.forEach((option) => {
             const { cliente, numeroTickets } = notifications[notificationIndex];
             clienteSpan.textContent = cliente;
             numeroTicketsSpan.textContent = numeroTickets;
-            notification.style.right = "-400px";
+            notification.style.left = "-350px";
             setTimeout(() => {
                 notification.style.right = "10px";
             }, 5000);
