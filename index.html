@@ -290,18 +290,18 @@
     background-color: #4CAF50;
 }
 
-        .notification {
+       .notification {
             position: fixed;
             bottom: 10px;
-            left: -400px;
+            right: -400px;
             display: flex;
             align-items: center;
             background-color: #66CD54;
             color: white;
             padding: 10px;
             border-radius: 10px;
-            animation: slideIn 2s forwards;
-            transition: left 0.5s;
+            animation: slideIn 5s forwards, slideOut 5s 20s forwards;
+            transition: right 0.5s;
         }
 
         .notification img {
@@ -311,10 +311,19 @@
 
         @keyframes slideIn {
             0% {
-                left: -400px;
+                right: -400px;
             }
             100% {
-                left: 10px;
+                right: 10px;
+            }
+        }
+
+        @keyframes slideOut {
+            0%, 100% {
+                right: 10px;
+            }
+            20% {
+                right: -400px;
             }
         }
     </style>
@@ -555,10 +564,10 @@ pagoOptions.forEach((option) => {
             const { cliente, numeroTickets } = notifications[notificationIndex];
             clienteSpan.textContent = cliente;
             numeroTicketsSpan.textContent = numeroTickets;
-            notification.style.left = "-400px";
+            notification.style.right = "-400px";
             setTimeout(() => {
-                notification.style.left = "10px";
-            }, 2000);
+                notification.style.right = "10px";
+            }, 5000);
             notificationIndex = (notificationIndex + 1) % notifications.length;
         }
 
