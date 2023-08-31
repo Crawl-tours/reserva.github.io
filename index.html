@@ -579,34 +579,42 @@ pagoOptions.forEach((option) => {
 
 
         const notification = document.querySelector(".notification");
-        const clienteSpan = document.getElementById("cliente");
-        const numeroTicketsSpan = document.getElementById("numeroTickets");
+const clienteSpan = document.getElementById("cliente");
+const numeroTicketsSpan = document.getElementById("numeroTickets");
+const ofertaTicketsSpan = document.getElementById("ofertaTickets"); // Nuevo elemento agregado
 
-        const notifications = [
-            { cliente: "Ana", numeroTickets: "2" },
-            { cliente: "Michel", numeroTickets: "4" },
-            { cliente: "Myriam", numeroTickets: "3" },
-            { cliente: "David", numeroTickets: "2" }
-        ];
+const notifications = [
+    { cliente: "Ana", numeroTickets: "2" },
+    { cliente: "Michel", numeroTickets: "4" },
+    { cliente: "Myriam", numeroTickets: "3" },
+    { cliente: "David", numeroTickets: "2" }
+];
 
-        let notificationIndex = 0;
+let notificationIndex = 0;
+let ofertaTicketsValue = 10; // Valor inicial de los tickets
 
-        function updateNotification() {
-            const { cliente, numeroTickets } = notifications[notificationIndex];
-            clienteSpan.textContent = cliente;
-            numeroTicketsSpan.textContent = numeroTickets;
-            notification.style.transform = "translateX(-100%)";
-            setTimeout(() => {
-                notification.style.transform = "translateX(0)";
-            }, 200);
-            setTimeout(() => {
-                notification.style.transform = "translateX(-100%)";
-            }, 4800);
-            notificationIndex = (notificationIndex + 1) % notifications.length;
-        }
+function updateNotification() {
+    const { cliente, numeroTickets } = notifications[notificationIndex];
+    clienteSpan.textContent = cliente;
+    numeroTicketsSpan.textContent = numeroTickets;
 
-        updateNotification(); // Llamarlo inmediatamente al cargar la página
-        setInterval(updateNotification, 20000);
+    // Disminuir el valor de ofertaTicketsValue
+    ofertaTicketsValue -= parseInt(numeroTickets);
+    ofertaTicketsSpan.textContent = ofertaTicketsValue;
+
+    notification.style.transform = "translateX(-100%)";
+    setTimeout(() => {
+        notification.style.transform = "translateX(0)";
+    }, 200);
+    setTimeout(() => {
+        notification.style.transform = "translateX(-100%)";
+    }, 4800);
+    notificationIndex = (notificationIndex + 1) % notifications.length;
+}
+
+updateNotification(); // Llamarlo inmediatamente al cargar la página
+setInterval(updateNotification, 20000);
+
     </script>
 </body>
 </html>
