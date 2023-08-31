@@ -289,6 +289,34 @@
 #submit-button:hover {
     background-color: #4CAF50;
 }
+
+        .notification {
+            position: fixed;
+            bottom: 10px;
+            left: -400px;
+            display: flex;
+            align-items: center;
+            background-color: #66CD54;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            animation: slideIn 2s forwards;
+            transition: left 0.5s;
+        }
+
+        .notification img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        @keyframes slideIn {
+            0% {
+                left: -400px;
+            }
+            100% {
+                left: 10px;
+            }
+        }
     </style>
 </head>
 <body>
