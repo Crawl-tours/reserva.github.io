@@ -358,7 +358,7 @@
 .progress-bar {
     height: 100%;
     background-color: #E68B00;
-    width: 0;
+    width: 50%;
     border-radius: 30px;
     transition: width 0.3s;
 }
@@ -379,8 +379,8 @@
     <div class="top-section" id="topsection" style="display: none">
     <h2>Sólo quedan <span id="ofertaTickets">15</span> tickets</h2>
     <div class="progress-bar-container">
-        <div class="progress-bar"></div>
-    </div>
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
 </div>
 </div>
      <div class="story-container">
@@ -607,13 +607,17 @@ const clienteSpan = document.getElementById("cliente");
 const numeroTicketsSpan = document.getElementById("numeroTickets");
 const ofertaTicketsSpan = document.getElementById("ofertaTickets"); // Nuevo elemento agregado
 
+        
+
 const notifications = [
     { cliente: "Ana", numeroTickets: "2" },
     { cliente: "Michel", numeroTickets: "4" },
     { cliente: "Myriam", numeroTickets: "3" },
     { cliente: "David", numeroTickets: "2" }
 ];
-
+const progressBar = document.getElementById('progressBar');
+const progressBarContainer = document.querySelector('.progress-bar-container');
+        
 let notificationIndex = 0;
 let ofertaTicketsValue = 15; // Valor inicial de los tickets
 
@@ -621,6 +625,10 @@ function updateNotification() {
     const { cliente, numeroTickets } = notifications[notificationIndex];
     clienteSpan.textContent = cliente;
     numeroTicketsSpan.textContent = numeroTickets;
+
+     const progressIncrement = 10;
+     const progressValue = (progressIncrement * (notificationIndex + 1)) + '%';
+     progressBar.style.width = progressValue;
 
     // Disminuir el valor de ofertaTicketsValue
     ofertaTicketsValue -= parseInt(numeroTickets);
@@ -640,10 +648,7 @@ updateNotification(); // Llamarlo inmediatamente al cargar la página
 setInterval(updateNotification, 60000);
 
 
-        const progressBar = document.querySelector(".progress-bar");
-const progressPercentage = (15 - ofertaTicketsValue) * 100 / 15; // Calcular el porcentaje de progreso
-progressBar.style.width = `${progressPercentage}%`;
-
+       
     </script>
 </body>
 </html>
