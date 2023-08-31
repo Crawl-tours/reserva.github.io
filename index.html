@@ -563,7 +563,7 @@ pagoOptions.forEach((option) => {
             numeroTicketsSpan.textContent = numeroTickets;
             notification.style.left = "350px";
             setTimeout(() => {
-                notification.style.right = "10px";
+                notification.style.left = "0";
             }, 5000);
             notificationIndex = (notificationIndex + 1) % notifications.length;
         }
