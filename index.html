@@ -473,7 +473,7 @@
             </div>
         </div>
     </div>
-    <div class="notification">
+     <div class="notification">
         <h4><span id="cliente">Ana</span> acaba de comprar <span id="numeroTickets">2</span></h4>
         <img src="https://cf.ecommercebusinessclub.com/hosted/images/03/3dbafc2e424a4e91c7038740ba33f6/ENTRADAS-ebl.png" style="width: 50px">
     </div>
@@ -541,17 +541,17 @@ pagoOptions.forEach((option) => {
 
 
 
-          const notification = document.querySelector(".notification");
+        const notification = document.querySelector(".notification");
         const clienteSpan = document.getElementById("cliente");
         const numeroTicketsSpan = document.getElementById("numeroTickets");
-        
+
         const notifications = [
             { cliente: "Ana", numeroTickets: "2" },
             { cliente: "Michel", numeroTickets: "4" },
             { cliente: "Myriam", numeroTickets: "3" },
             { cliente: "David", numeroTickets: "2" }
         ];
-        
+
         let notificationIndex = 0;
 
         function updateNotification() {
@@ -568,8 +568,8 @@ pagoOptions.forEach((option) => {
             notificationIndex = (notificationIndex + 1) % notifications.length;
         }
 
+        updateNotification(); // Llamarlo inmediatamente al cargar la página
         setInterval(updateNotification, 20000);
-    </script>
     </script>
 </body>
 </html>
