@@ -342,16 +342,25 @@
     color: #E68B00;
 }
 
-.progress-bar {
-       width: 90%;
+.progress-bar-container {
+    width: 90%;
     height: 15px;
-    background-color: #E68B00;
+    background-color: #EAEAEA;
     margin: auto;
     position: relative;
     border-radius: 30px;
+    overflow: hidden;
 }
 
-.progress-bar::before {
+.progress-bar {
+    height: 100%;
+    background-color: #E68B00;
+    width: 0;
+    border-radius: 30px;
+    transition: width 0.3s;
+}
+
+/*.progress-bar::before {
     content: "";
     position: absolute;
     top: 0;
@@ -360,13 +369,16 @@
     height: 100%;
     background-color: #FFC87C;
     border-radius: 30px;
-}
+}*/
     </style>
 </head>
 <body>
     <div class="top-section" id="topsection" style="display: none">
     <h2>Sólo quedan <span id="ofertaTickets">15</span> tickets</h2>
-    <div class="progress-bar"></div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+</div>
 </div>
      <div class="story-container">
         <div class="story-bubble" data-image="imagen1.jpg">
@@ -623,6 +635,11 @@ function updateNotification() {
 
 updateNotification(); // Llamarlo inmediatamente al cargar la página
 setInterval(updateNotification, 60000);
+
+
+        const progressBar = document.querySelector(".progress-bar");
+const progressPercentage = (15 - ofertaTicketsValue) * 100 / 15; // Calcular el porcentaje de progreso
+progressBar.style.width = `${progressPercentage}%`;
 
     </script>
 </body>
